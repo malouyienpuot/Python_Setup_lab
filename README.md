@@ -1,2 +1,10 @@
 # Python_Setup_lab
-This is my first flutter app
+
+Student names:
+- Abdikadir Madey
+- Gatluak Gorden
+
+School:
+- Eliye Primary School
+
+This repository is prepared for the Flutter, Python, MySQL, and VS Code setup assignment work.
