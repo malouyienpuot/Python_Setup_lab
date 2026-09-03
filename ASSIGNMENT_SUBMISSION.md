@@ -1,8 +1,8 @@
 # Practical Development Setup
 
-**Student names:** Abdikadir Madey; Gatluak Gorden  
-**Date:** 2026-09-03  
-**Course/Class:** Practical Development Setup  
+**Student names:** Abdikadir Madey; Gatluak Gorden
+**Date:** 2026-09-03
+**Course/Class:** Practical Development Setup
 
 > This document is a submission-ready record of the required commands. Outputs and
 > screenshots marked **To be captured locally** must be replaced with evidence from
@@ -150,7 +150,7 @@ following at once:
 2. The integrated terminal with the `(venv)` prompt.
 3. The bottom status bar with the selected Python interpreter.
 
-**Screenshot — To be captured locally:**  
+**Screenshot — To be captured locally:**
 `[Insert the single uncropped VS Code screenshot here.]`
 
 ## Google Docs Submission Checklist
