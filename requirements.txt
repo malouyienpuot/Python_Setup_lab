@@ -1,0 +1,3 @@
+# The exact pinned output should be generated locally with:
+# python -m pip freeze > requirements.txt
+requests
