@@ -7,48 +7,28 @@
 
 ## Section 1: Task 1 - Flutter & Dart Setup
 
-### 1. Flutter environment verification
-
-Run the following command in the terminal:
-
+### Flutter verification
 ```powershell
 flutter doctor
 ```
+**Output:** Capture and paste the actual `flutter doctor` output here.
 
-**Flutter Doctor Output**
-
-> **Capture locally:** Paste the actual `flutter doctor` output here. This is machine-specific evidence and should not be invented.
-
-### 2. Create the Flutter application and list devices
-
+### Application initialization and devices
 ```powershell
 flutter create my_first_app
 cd my_first_app
 flutter devices
 ```
+**Available devices:** Capture and paste the actual `flutter devices` output here.
 
-**Available Devices**
+### Hot Reload vs Hot Restart
+**Hot Reload** applies changed Dart code to the running application while preserving the current application state. Use it for rapid UI and small logic changes.
 
-> **Capture locally:** Paste the actual `flutter devices` output here.
-
-### 3. Hot Reload vs Hot Restart
-
-**Hot Reload** updates the running Flutter application with changed Dart code while preserving the current application state. It is useful for quickly checking UI changes, styling changes, and small logic changes without losing the current state.
-
-**Hot Restart** restarts the Dart application and resets the in-memory application state. It is useful when changes involve initialization or when Hot Reload does not fully apply the change.
+**Hot Restart** restarts the Dart application and resets in-memory state. Use it when initialization changes need to run again or Hot Reload does not fully apply a change.
 
 ## Section 2: Task 2 - MySQL Database Management
 
-### 1. Log in to MySQL
-
-```bash
-mysql -u root -p
-```
-
-### 2. Create the database, table, and sample records
-
-The complete SQL script is also available in [school.sql](school.sql).
-
+### SQL script
 ```sql
 CREATE DATABASE IF NOT EXISTS school;
 USE school;
@@ -68,16 +48,12 @@ VALUES
 SELECT * FROM students;
 ```
 
-### 3. SELECT result
+**SELECT result:** Capture the actual terminal output and add a clear screenshot to the Google Doc.
 
-> **Capture locally:** Paste the actual terminal output from `SELECT * FROM students;` here and add a clear screenshot to the Google Doc.
+### Security Reflection
+Using `root` for application connections is poor practice because it is an administrative account with broad privileges. If application credentials are compromised, excessive privileges can expose or damage unrelated database objects.
 
-### 4. Security Reflection
-
-Using the MySQL `root` account for an application's backend connection is poor security practice because root is an administrative account with very broad privileges. If application credentials are exposed, an attacker could potentially access, modify, or delete data beyond what the application needs.
-
-A dedicated application account follows the principle of least privilege. For example:
-
+Use a dedicated least-privileged account:
 ```sql
 CREATE USER 'school_app'@'localhost'
 IDENTIFIED BY 'replace-with-a-long-unique-password';
@@ -88,25 +64,16 @@ TO 'school_app'@'localhost';
 
 SHOW GRANTS FOR 'school_app'@'localhost';
 ```
-
-The password should be replaced with a strong unique secret and stored securely, such as in environment variables or a secrets manager. It should never be committed to GitHub.
+Store the real password securely and never commit it to GitHub.
 
 ## Section 3: Task 3 - Python Virtual Environment
 
-### 1. Create the project directory
-
-**PowerShell:**
-
+### Commands
 ```powershell
 New-Item -ItemType Directory -Path .\python_setup_lab
 Set-Location .\python_setup_lab
 py -m venv venv
 .\venv\Scripts\Activate.ps1
-```
-
-### 2. Install and verify requests
-
-```powershell
 python -m pip install --upgrade pip
 python -m pip install requests
 python -m pip list
@@ -114,70 +81,37 @@ python -m pip freeze > requirements.txt
 Get-Content .\requirements.txt
 ```
 
-The `requests` package should appear in the package list. The generated `requirements.txt` should contain the installed package versions.
-
-> **Note:** The repository's `requirements.txt` is a dependency specification. If the instructor requires the exact machine-generated freeze output, regenerate it locally with `python -m pip freeze > requirements.txt`.
-
-### 3. Activation troubleshooting
-
-If PowerShell blocks virtual-environment activation:
-
+If PowerShell blocks activation:
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
-Then activate again:
-
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
 ## Section 4: Task 4 - VS Code Workspace Screenshot
 
-Install these VS Code extensions:
+Install **Flutter, Dart, Python, Pylance, and MySQL** extensions.
 
-1. Flutter
-2. Dart
-3. Python
-4. Pylance
-5. MySQL
-
-Open the `python_setup_lab` folder in VS Code and use **Python: Select Interpreter** to select:
-
+Use **Python: Select Interpreter** and select:
 ```
 python_setup_lab\venv\Scripts\python.exe
 ```
 
-Open the integrated terminal and confirm that the `(venv)` prompt is active.
+Capture one full-screen, uncropped screenshot showing:
+1. Extensions panel with the required extensions.
+2. Integrated terminal with the `(venv)` prompt.
+3. Bottom status bar showing the selected Python interpreter.
 
-### Required single full-screen screenshot
-
-The screenshot must clearly show all three items at the same time:
-
-- The Extensions panel showing the required installed extensions.
-- The integrated terminal showing the `(venv)` prompt.
-- The bottom status bar showing the selected Python interpreter/environment.
-
-> **Insert screenshot here:** Capture one clear, uncropped, full-screen VS Code screenshot on the actual computer.
+**Screenshot:** Insert the actual screenshot into the Google Doc.
 
 ## Google Docs Submission
 
-Create a Google Doc named:
+Create: **Malou Yien Puot - Assignment: Practical Development Setup**
 
-**Malou Yien Puot - Assignment: Practical Development Setup**
+Header:
+- Malou yien puot
+- Date: 19/9/2026
+- Course: Software Engineering Essential
+- Class Title: Environment setup for Dart
 
-Use the following structure:
+Use monospace formatting for commands and SQL. Share from **Puotmalouyien@gmail.com** using **Anyone with the link → Viewer**, copy the link, and submit it on the course portal.
 
-- Header: Malou yien puot, Date 19/9/2026, Course: Software Engineering Essential, Class Title: Environment setup for Dart
-- Section 1: Task 1 - Flutter & Dart Setup
-- Section 2: Task 2 - MySQL Database Management
-- Section 3: Task 3 - Python Virtual Environment
-- Section 4: Task 4 - VS Code Workspace Screenshot
-
-Use a monospace font for command-line and SQL snippets. Make sure screenshots are clear, uncropped, and readable.
-
-For sharing, use the Google account **Puotmalouyien@gmail.com**, then set:
-
-**Share → General access → Anyone with the link → Viewer**
-
-Finally, copy the Google Docs link and submit it through the course portal.
+> The Google Docs link and machine-specific screenshots/output are intentionally left for the student to add after completing the setup locally.
